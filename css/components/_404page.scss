@@ -1,0 +1,11 @@
+@use "../abstracts/mixins" as mix;
+
+.animation-container {
+  @extend %container-small;
+  @include mix.flex(row, center, center);
+
+  .lottie-animation {
+    text-align: center;
+    width: 40%;
+  }
+}

@@ -1,0 +1,120 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "sass:math";
+
+#home-page {
+  background: var.$gradient-primary;
+
+  // BANNER
+  #home-page-video-picture {
+    background-image: url("../assets/images/banner-img.png");
+    height: calc(100vh - 129.6px);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+
+    //breakpoint
+    @include breakpoint.mobile-between {
+      height: calc(100vh - 115px);
+    }
+  }
+
+  // VIDEO CONTAINER
+  #home-video-container {
+    height: calc(100vh - 129.6px);
+
+    //breakpoint
+    @include breakpoint.mobile-between {
+      height: calc(100vh - 115px);
+    }
+
+    iframe {
+      height: 100%;
+    }
+  }
+
+  // CARDS
+  .cards-section {
+    @extend %container-big;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .wrapper {
+    @extend %wrapper-80;
+
+    // CARDS CONTAINER
+    .cards-container {
+      @include mix.flex(row, center, stretch, var.$gutter-large);
+
+      //breakpoint
+      @include breakpoint.tablet {
+        flex-direction: column;
+      }
+    }
+
+    //CARD
+    .card {
+      @include mix.flex(column, center, flex-start, var.$gutter-medium);
+      padding: var.$gutter-base;
+      border-radius: var.$border-radius-base;
+
+      &:nth-child(1) {
+        background-color: rgba(var.$background-color-primary, 0.4);
+      }
+      &:nth-child(2) {
+        background-color: rgba(var.$background-color-tertiary, 0.4);
+      }
+      &:nth-child(3) {
+        background-color: rgba(var.$background-color-quaternary, 0.4);
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      //breakpoint
+      @include breakpoint.laptop-l {
+        padding: var.$gutter-medium;
+      }
+
+      button {
+        @include mix.button(
+          rgba(var.$background-color-base, 0.4),
+          var.$text-color-secondary,
+          var.$gutter-small
+        );
+        width: 100%;
+        position: relative;
+        border: none;
+
+        &::after {
+          @include mix.border-style(inset 0 2px 0 rgba(255, 255, 255, 0.4));
+        }
+      }
+    }
+
+    // TITLE ICON SECTION
+    .title-icon-section {
+      @include mix.flex(row, space-between, center);
+      width: 100%;
+
+      h2 {
+        flex-basis: 80%;
+      }
+
+      img {
+        flex-basis: 20%;
+        width: 90px;
+
+        //breakpoint
+        @include breakpoint.tablet {
+          width: 70px;
+        }
+      }
+    }
+  }
+}

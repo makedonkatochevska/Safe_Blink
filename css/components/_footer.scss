@@ -1,0 +1,101 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "sass:math";
+
+footer {
+  @extend %container-small;
+  background: var.$gradient-secondary, var.$background-color-secondary;
+  border-top: 1px solid rgba(var.$text-color-light, 0.4);
+  box-shadow: 0px -8px 16px 0px #8f39ec0a;
+
+  .wrapper {
+    @extend %wrapper-80;
+
+    @include breakpoint.tablet {
+      width: 90%;
+    }
+  }
+
+  // FOOTER CONTAINER
+  .footer-container {
+    @include mix.flex(row, space-between, stretch, var.$gutter-medium);
+    color: var.$text-color-light;
+
+    //breakpoint
+    @include breakpoint.tablet {
+      flex-direction: column;
+    }
+
+    // CONTACT PART
+    .contact-part {
+      img,
+      p {
+        margin-bottom: var.$gutter-half;
+      }
+
+      #language-icon-logo {
+        display: none;
+
+        //breakpoint
+        @include breakpoint.tablet {
+          display: block;
+        }
+      }
+
+      // LOGO CONTAINER
+      .logo-container {
+        //breakpoint
+        @include breakpoint.tablet {
+          @include mix.flex(row, space-between, center);
+        }
+      }
+    }
+
+    .contact-info {
+      @include mix.flex(row, space-between, start, var.$gutter-medium);
+
+      //breakpoint
+      @include breakpoint.tablet {
+        flex-direction: column;
+      }
+    }
+
+    // MENU PART
+    .menu-part ul {
+      @include mix.flex(column, space-between, start, var.$gutter-medium);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+    }
+
+    .links-part {
+      @include mix.flex(column, space-between, end);
+
+      //breakpoint
+      @include breakpoint.tablet {
+        align-items: center;
+
+        #language-icon-links {
+          display: none;
+        }
+      }
+
+      // SOCIALS CONTAINER
+      .socials-container {
+        @include mix.flex(row, space-between, center, var.$gutter-medium);
+        font-size: 30px;
+
+        //breakpoint
+        @include breakpoint.tablet {
+          margin-bottom: var.$gutter-medium;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

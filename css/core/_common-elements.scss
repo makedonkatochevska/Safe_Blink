@@ -1,0 +1,93 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/breakpoints" as breakpoint;
+
+body {
+  font-family: var.$font-family-base;
+  color: var.$text-color-primary;
+  font-size: var.$font-size-base;
+  font-weight: var.$font-weight-normal;
+}
+
+section {
+  padding-top: 129.6px;
+
+  //breakpoint
+  @include breakpoint.mobile-between {
+    padding-top: 115px;
+  }
+}
+
+h1 {
+  font-size: var.$heading-size-enormous;
+  line-height: var.$line-height-big;
+  margin-bottom: var.$gutter-big;
+  font-weight: var.$font-weight-bolder;
+  color: rgba(var.$text-color-light, 0.6);
+  text-shadow: 0px 4px 8px rgba(var.$background-color-primary, 0.2);
+
+  //breakpoint
+  @include breakpoint.laptop-l {
+    font-size: var.$heading-size-big;
+  }
+
+  //breakpoint
+  @include breakpoint.tablet {
+    font-size: var.$heading-size-base;
+    line-height: var.$line-height-base;
+    margin-bottom: var.$gutter-base;
+  }
+}
+
+h2 {
+  font-size: var.$heading-size-base;
+  font-weight: var.$font-weight-bold;
+  color: var.$text-color-primary;
+  margin-bottom: 0;
+
+  //breakpoint
+  @include breakpoint.laptop-l {
+    font-size: var.$heading-size-tiny;
+  }
+}
+
+h3 {
+  font-size: var.$heading-size-tiny;
+  color: var.$background-color-secondary;
+  font-weight: var.$font-weight-bold;
+  margin-bottom: var.$gutter-medium;
+
+  @include breakpoint.tablet {
+    font-size: var.$font-size-big;
+  }
+}
+
+h4 {
+  font-size: var.$heading-size-small;
+  color: var.$text-color-primary;
+  font-weight: var.$font-weight-bolder;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+h5 {
+  font-size: var.$font-size-20;
+  color: var.$text-color-primary;
+  font-weight: var.$font-weight-bold;
+  margin-bottom: var.$gutter-15;
+}
+
+h6 {
+  font-size: var.$heading-size-big;
+  color: var.$text-color-light;
+  font-weight: var.$font-weight-bold;
+  margin-bottom: var.$gutter-15;
+
+  //breakpoint
+  @include breakpoint.mobile-l {
+    font-size: var.$heading-size-medium;
+  }
+}
+
+p {
+  line-height: var.$line-height-small;
+}

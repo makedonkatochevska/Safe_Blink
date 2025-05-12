@@ -1,0 +1,90 @@
+@use "./variables" as var;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "sass:math";
+
+//container for padding
+%container-big {
+  padding-block: var.$gutter-big;
+
+  @include breakpoint.tablet {
+    padding-block: var.$gutter-base;
+  }
+}
+
+%container-small {
+  padding-block: var.$gutter-base;
+
+  @include breakpoint.tablet {
+    padding-block: var.$gutter-half;
+  }
+}
+
+//wrapper
+%wrapper-80 {
+  width: 80%;
+  margin-inline: auto;
+
+  @include breakpoint.tablet {
+    width: 90%;
+  }
+}
+
+%wrapper-90 {
+  width: 90%;
+  margin-inline: auto;
+}
+
+//flex
+@mixin flex(
+  $flex-direction,
+  $justify-content,
+  $align-items,
+  $gap: 0,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+//button
+@mixin button(
+  $bg-color,
+  $text-color,
+  $padding-block,
+  $padding-inline: var.$gutter-half
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: var.$border-radius-small;
+  padding: var.$gutter-small var.$gutter-base;
+  padding-block: $padding-block;
+  padding-inline: $padding-inline;
+  font-size: var.$font-size-medium;
+  font-weight: var.$font-weight-bold;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+
+  @include breakpoint.tablet {
+    font-size: var.$font-size-base;
+  }
+}
+
+//border effect
+@mixin border-style($shadow-color...) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var.$border-radius-small;
+  box-shadow: $shadow-color;
+  pointer-events: none;
+}

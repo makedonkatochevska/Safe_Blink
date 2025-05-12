@@ -1,0 +1,74 @@
+@use "../abstracts/variables" as var;
+
+.hidden {
+  display: none !important;
+}
+
+.active {
+  display: block !important;
+}
+
+.active-flex {
+  display: flex;
+}
+
+.active-dot {
+  opacity: 1 !important;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.active-heading {
+  opacity: 1;
+}
+
+.carousel-active {
+  opacity: 1;
+}
+
+.inactive-heading {
+  opacity: 0.4;
+}
+
+.active-filter-button {
+  opacity: 1;
+}
+
+.inactive-filter-button {
+  opacity: 0.4;
+}
+
+.header-scrolled {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(24px);
+  mix-blend-mode: hard-light;
+  box-shadow: 0px 5px 24px 0px rgba(var.$text-color-secondary, 0.08);
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
+}
+
+.active-nav-link {
+  color: var.$text-color-primary;
+  text-decoration: underline;
+}
+
+.active-profile-input {
+  background-color: var.$background-color-base !important;
+  color: var.$text-color-dark !important;
+  border-color: var.$background-color-primary !important;
+  border-radius: var.$border-radius-base !important;
+}
+
+.card-color-1 {
+  background-color: rgba(var.$background-color-tertiary, 0.4);
+}
+
+.card-color-2 {
+  background-color: rgba(var.$background-color-primary, 0.4);
+}
+
+.card-color-3 {
+  background-color: rgba(var.$background-color-quaternary, 0.4);
+}

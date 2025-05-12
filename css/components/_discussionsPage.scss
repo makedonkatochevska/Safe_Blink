@@ -1,0 +1,213 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "sass:math";
+
+#discussion-page {
+  background: linear-gradient(
+      0deg,
+      rgba(218, 218, 218, 0.5),
+      rgba(218, 218, 218, 0.5)
+    ),
+    var.$gradient-primary;
+  position: relative;
+  max-height: 1500px;
+  overflow: hidden;
+
+  .wrapper {
+    @extend %container-big;
+    @extend %wrapper-80;
+  }
+
+  // CARDS CONTAINER
+  .cards-container {
+    column-count: 3;
+    column-gap: 1rem;
+    padding: 1rem;
+
+    //breakpoint
+    @include breakpoint.tablet {
+      column-count: 2;
+    }
+
+    //breakpoint
+    @include breakpoint.mobile-l {
+      column-count: 1;
+    }
+  }
+
+  #dynamicCardsContainer {
+    display: contents;
+  }
+
+  // INPUT CARD
+  #shareExperienceCard {
+    background-color: rgba(var.$background-color-base, 0.4);
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      @include mix.border-style(inset 0 2px 0 rgba(255, 255, 255, 0.8));
+      border-radius: var.$border-radius-medium !important;
+    }
+
+    #shareExperienceInput {
+      width: 100%;
+      padding: var.$gutter-small var.$gutter-small var.$gutter-small 0;
+      font-size: 24px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid var.$text-color-primary;
+      color: rgba(var.$text-color-primary, 0.5);
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .input-box {
+      position: relative;
+
+      &:focus-within #submitNewDiscBtn {
+        display: block;
+      }
+    }
+
+    // SUBMIT NEW DISCUSSION BUTTON
+    #submitNewDiscBtn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: var.$gutter-small;
+      border: none;
+      background-color: rgba(var.$background-color-primary, 0.5);
+      color: var.$text-color-light;
+      font-weight: var.$font-weight-bold;
+      cursor: pointer;
+      display: none;
+    }
+
+    .info-box {
+      justify-content: flex-start;
+      gap: var.$gutter-half;
+    }
+  }
+
+  // CARD
+  .card {
+    @include mix.flex(column, center, stretch, var.$gutter-half);
+    padding: var.$gutter-half;
+    border-radius: var.$border-radius-medium;
+    break-inside: avoid;
+    margin-bottom: var.$gutter-half;
+    box-shadow: 0px 8px 16px 0px #42356b1a;
+
+    p {
+      line-height: var.$line-height-tiny;
+      margin-bottom: 0;
+    }
+
+    // INFO BOX
+    .info-box {
+      @include mix.flex(row, space-between, center);
+
+      //breakpoint
+      @include breakpoint.mobile-s {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid black;
+        object-fit: cover;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      .date-info {
+        color: rgba(var.$text-color-primary, 0.5) !important;
+      }
+    }
+
+    // PERSONAL INFO
+    .personal-info {
+      @include mix.flex(row, flex-start, center, var.$gutter-medium);
+    }
+
+    // COMMENT INPUT
+    .disscussion-comment {
+      width: 100%;
+      padding-bottom: var.$gutter-small;
+      font-size: var.$font-size-base;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid var.$text-color-primary;
+      color: rgba(var.$text-color-primary, 0.5);
+    }
+
+    // ACTION BOX
+    .action-box {
+      @include mix.flex(row, flex-start, center, var.$gutter-small);
+
+      //breakpoint
+      @include breakpoint.mobile-s {
+        flex-direction: column;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // SEE MORE OVERLAY
+  .gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-block: var.$gutter-big var.$gutter-base;
+    background: linear-gradient(
+      0deg,
+      rgba(218, 218, 218, 0.99) 2%,
+      rgba(218, 218, 218, 0.98) 3%,
+      rgba(218, 218, 218, 0.95) 5%,
+      rgba(218, 218, 218, 0.93) 8%,
+      rgba(218, 218, 218, 0.9) 10%,
+      rgba(218, 218, 218, 0.85) 15%,
+      rgba(218, 218, 218, 0.8) 20%,
+      rgba(218, 218, 218, 0.75) 25%,
+      rgba(218, 218, 218, 0.7) 30%,
+      rgba(218, 218, 218, 0.65) 35%,
+      rgba(218, 218, 218, 0.6) 40%,
+      rgba(218, 218, 218, 0.55) 45%,
+      rgba(218, 218, 218, 0.5) 50%,
+      rgba(218, 218, 218, 0.45) 55%,
+      rgba(218, 218, 218, 0.4) 60%,
+      rgba(218, 218, 218, 0.35) 65%,
+      rgba(218, 218, 218, 0.3) 70%,
+      rgba(218, 218, 218, 0.25) 75%,
+      rgba(218, 218, 218, 0.2) 80%,
+      rgba(218, 218, 218, 0.15) 85%,
+      rgba(218, 218, 218, 0.1) 90%,
+      rgba(218, 218, 218, 0.05) 95%,
+      rgba(218, 218, 218, 0) 100%
+    );
+    text-align: center;
+
+    .see-more {
+      background: transparent;
+      color: var.$text-color-light;
+      font-weight: var.$font-weight-bold;
+      border: none;
+      font-size: var.$font-size-medium;
+      cursor: pointer;
+    }
+  }
+}

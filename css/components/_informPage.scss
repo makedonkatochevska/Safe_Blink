@@ -1,0 +1,208 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "sass:math";
+
+#information-page {
+  position: relative;
+  background: var.$gradient-primary;
+
+  .wrapper {
+    @extend %container-big;
+    @extend %wrapper-80;
+  }
+
+  h1 {
+    //breakpoint
+    @include breakpoint.tablet {
+      text-align: center;
+    }
+  }
+
+  //HEADING CAROUSEL
+  .heading-carousel-container {
+    width: 70%;
+    margin: 0 auto var.$gutter-base auto;
+
+    //breakpoint
+    @include breakpoint.tablet {
+      @include mix.flex(column, center, stretch, var.$gutter-half);
+      width: 100%;
+    }
+
+    .carousel-inner {
+      //breakpoint
+      @include breakpoint.tablet {
+        @include mix.flex(row, space-between, center, 20px);
+      }
+    }
+
+    .carousel-wrapper {
+      @include mix.flex(row, space-between, center, var.$gutter-medium);
+    }
+
+    #arrow-left,
+    #arrow-right {
+      font-size: var.$font-size-enormous;
+      display: none;
+
+      //breakpoint
+      @include breakpoint.tablet {
+        display: block;
+      }
+    }
+
+    // CAROUSEL PAGINATION
+    .carousel-pagination {
+      font-size: 10px;
+      display: none;
+
+      //breakpoint
+      @include breakpoint.tablet {
+        @include mix.flex(row, center, center, var.$gutter-base);
+      }
+
+      .dot {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  // FILTER BUTTONS
+  .filter-btns-container {
+    @extend %container-small;
+    @include mix.flex(row, center, center, var.$gutter-half);
+
+    //breakpoint
+    @include breakpoint.tablet {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      scroll-snap-type: x mandatory;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    button {
+      @include mix.button(
+        rgba(var.$background-color-base, 0.4),
+        var.$text-color-primary,
+        var.$gutter-small,
+        var.$gutter-large
+      );
+      border-radius: var.$border-radius-24;
+      font-size: var.$font-size-base;
+      font-weight: var.$font-weight-normal;
+      border: 1px solid rgba(var.$background-color-base, 0.8);
+      box-shadow: 0px 8px 16px 0px rgba(var.$text-color-secondary, 0.1);
+
+      //breakpoint
+      @include breakpoint.tablet {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  // CARD CONTAINER
+  .card-container {
+    @include mix.flex(row, flex-start, stretch, var.$gutter-medium, wrap);
+    @extend %container-small;
+
+    // CARD
+    .card {
+      flex-basis: calc(25% - var.$gutter-medium);
+      border-radius: var.$border-radius-medium;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+
+      //breakpoint
+      @include breakpoint.laptop-m {
+        flex-basis: calc((100% - (2 * var.$gutter-medium)) / 3);
+      }
+
+      //breakpoint
+      @include breakpoint.tablet {
+        flex-basis: 100%;
+      }
+
+      &:hover .play-btn {
+        opacity: 0.6;
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 20px 0px rgba(var.$background-color-base, 0.5);
+      }
+
+      img {
+        width: 100%;
+
+        //breakpoint
+        @include breakpoint.laptop-m {
+          height: 609px;
+        }
+      }
+    }
+
+    .card-inner {
+      position: relative;
+    }
+
+    // DESCRIPTION CONTAINER
+    .desc-container {
+      @include mix.flex(column, space-between, stretch);
+      background: rgba(var.$background-color-base, 0.6);
+      backdrop-filter: blur(24px);
+      box-shadow: 0px 5px 24px 0px rgba(var.$text-color-secondary, 0.08);
+      padding: var.$gutter-15 var.$gutter-medium;
+      border-top: 2px solid rgba(var.$text-color-light, 0.4);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+
+      .card-description {
+        line-height: var.$line-height-tiny;
+      }
+
+      .date-posted {
+        color: rgba(var.$text-color-primary, 0.5);
+        margin-bottom: 0;
+      }
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  // SEE MORE BUTTON
+  .see-more-btn-container {
+    text-align: center;
+    display: none;
+
+    //breakpoint
+    @include breakpoint.tablet {
+      display: block;
+    }
+
+    button {
+      background-color: transparent;
+      color: var.$text-color-light;
+      border: none;
+      font-size: var.$font-size-medium;
+    }
+  }
+}

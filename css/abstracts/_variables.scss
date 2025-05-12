@@ -1,0 +1,104 @@
+@use "sass:math";
+
+@function rem-calc($size) {
+  @return (math.div($size, 16)) * 1rem;
+}
+
+//Font settings
+$font-family-base: "Montserrat", sans-serif;
+
+$font-size-base: rem-calc(16);
+$font-size-medium: rem-calc(18);
+$font-size-big: rem-calc(22);
+$font-size-enormous: rem-calc(40);
+$font-size-20: rem-calc(20);
+
+$heading-size-tiny: rem-calc(24);
+$heading-size-base: rem-calc(32);
+$heading-size-small: rem-calc(36);
+$heading-size-medium: rem-calc(40);
+$heading-size-big: rem-calc(64);
+$heading-size-enormous: rem-calc(80);
+
+$line-height-tiny: rem-calc(24);
+$line-height-small: rem-calc(32);
+$line-height-base: rem-calc(48);
+$line-height-big: rem-calc(88);
+
+$font-weight-normal: 500;
+$font-weight-bold: 700;
+$font-weight-bolder: 900;
+
+// Size settings
+$gutter-base: rem-calc(40);
+$gutter-half: math.div($gutter-base, 2);
+$gutter-small: rem-calc(8);
+$gutter-medium: rem-calc(24);
+$gutter-large: rem-calc(32);
+$gutter-big: $gutter-base * 2;
+$gutter-15: rem-calc(15);
+$gutter-18: rem-calc(18);
+$gutter-48: rem-calc(48);
+$gutter-120: rem-calc(120);
+$gutter-56: rem-calc(56);
+
+// Breakpoints
+$four-k: 2560px;
+$laptop-between: 1800px;
+$laptop-l: 1440px;
+$laptop-m: 1024px;
+$tablet: 768px;
+$mobile-l: 570px;
+$mobile-m: 375px;
+$mobile-s: 320px;
+$mobile-between: 340px;
+
+// Color settings
+$text-color-dark: #000;
+$text-color-light: #fff;
+$text-color-primary: #152347;
+$text-color-secondary: #42356b;
+
+$background-color-base: #ffffff;
+$background-color-primary: #9946f3;
+$background-color-secondary: #764ff0;
+$background-color-tertiary: #4b7cf3;
+$background-color-quaternary: #83eab1;
+$background-color-gray: #dadada80;
+
+// Gradient settings
+$gradient-primary: linear-gradient(
+  180deg,
+  rgba(131, 234, 177, 0.7) 0%,
+  rgba(75, 124, 243, 0.7) 100%
+);
+
+$gradient-secondary: linear-gradient(
+  180deg,
+  rgba(153, 70, 243, 0.8) 0%,
+  rgba(66, 53, 107, 0.8) 100%
+);
+
+$gradient-tertiary: linear-gradient(to bottom, #764ff0, #764ff000);
+
+$gradient-quaternary: linear-gradient(
+  to bottom,
+  rgba(255, 255, 255, 0.3),
+  rgba(255, 255, 255, 0.5)
+);
+
+$gradient-radial: radial-gradient(
+  circle at left top,
+  rgba(255, 255, 255, 1),
+  rgba(255, 255, 255, 0)
+);
+
+// Border Radius
+$border-radius-base: 10px;
+$border-radius-small: 8px;
+$border-radius-medium: 20px;
+$border-radius-24: 24px;
+$border-radius-big: 40px;
+
+// Shadow
+$box-shadow-base: 0px 4px 8px 0px rgba(118, 79, 240, 0.5);

@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeBlink</title>
+    <meta name="description" content="safe-web, Project" />
+    <meta name="author" content="Makedonka-Tochevska" />
+    <meta name="keywords" content="code, portfolio" />
+
+    <!-- TAB ICON -->
+    <link
+      rel="icon"
+      href="./assets/images/logo_color.png"
+      type="image/x-icon"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/6383af2146.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts / Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Black+Han+Sans&family=Calistoga&family=Candal&family=DynaPuff:wght@400..700&family=Itim&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sriracha&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="wrapper">
+        <div class="logoAndNav">
+          <a href="#home"
+            ><img src="./assets/images/logo_color.png" alt="logo_img"
+          /></a>
+
+          <!-- nav -->
+          <nav>
+            <ul id="navMenu">
+              <li><a href="#information" id="information">Информирај се</a></li>
+              <li><a href="#discussion" id="discussion">Дискусии</a></li>
+              <li><a href="#contact" id="contact">Контакт</a></li>
+              <li class="hidden" id="profileNavLink">
+                <a href="#profile">Профил</a>
+              </li>
+              <li id="mobileLogButtons">
+                <a href="#login" id="loginBtnMobile"
+                  ><button class="headerBtn">
+                    <img
+                      src="./assets/svg_icons/profile_icon.svg"
+                      alt="profile-svg"
+                    />
+                    <span>Најави се</span>
+                  </button></a
+                >
+                <button
+                  id="logoutBtnMobile"
+                  class="headerBtn hidden logoutButtons"
+                >
+                  <span>Одјава</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- hamburger icon -->
+          <span class="hamburger-icon" id="hamburger"
+            ><i class="fas fa-bars"></i
+          ></span>
+        </div>
+        <div class="actions">
+          <a href="#profile">
+            <img
+              alt="profile-img"
+              class="profile-img-header hidden"
+              id="navProfileImg"
+            />
+          </a>
+          <a href="#login" id="loginBtn"
+            ><button class="headerBtn">
+              <img
+                src="./assets/svg_icons/profile_icon.svg"
+                alt="profile-svg"
+              />
+              <span>Најави се</span>
+            </button></a
+          >
+          <button id="logoutBtn" class="headerBtn hidden logoutButtons">
+            <span>Одјава</span>
+          </button>
+          <img
+            src="./assets/svg_icons/mk-al_icon.svg"
+            alt="language-icon"
+            class="languages-icon"
+          />
+          <img
+            src="./assets/svg_icons/search_icon.svg"
+            alt="search-icon"
+            class="search-icon"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- HOME PAGE -->
+    <section id="home-page" class="hidden">
+      <!-- banner -->
+      <div class="banner">
+        <div id="home-page-video-picture"></div>
+        <div id="home-video-container" class="hidden">
+          <iframe
+            id="home-video"
+            width="100%"
+            src="https://www.youtube.com/embed/u31qwQUeGuM?autoplay=1&enablejsapi=1&mute=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- cards section -->
+      <div class="cards-section">
+        <h1>Информирај се и заштити се</h1>
+        <div class="wrapper">
+          <div class="cards-container">
+            <div class="card">
+              <div class="title-icon-section">
+                <h2>Научи сè што треба да знаеш</h2>
+                <img
+                  src="./assets/svg_icons/eye-lock-white_icon.svg"
+                  alt="eye lock eye icon"
+                />
+              </div>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+              <button>Дознај повеќе</button>
+            </div>
+            <div class="card">
+              <div class="title-icon-section">
+                <h2>Вклучи се во дискусија</h2>
+                <img
+                  src="./assets/svg_icons/encryption-check-white_icon.svg"
+                  alt="encryption check icon"
+                />
+              </div>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+              <button>Дознај повеќе</button>
+            </div>
+            <div class="card">
+              <div class="title-icon-section">
+                <h2>Следи го својот напредок</h2>
+                <img
+                  src="./assets/svg_icons/user-access-control-white_icon.svg"
+                  alt="user access control icon"
+                />
+              </div>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+              <button>Дознај повеќе</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFORMATION PAGE -->
+    <section id="information-page" class="hidden">
+      <div class="wrapper">
+        <h1>Сè што треба да знаеш</h1>
+
+        <!-- carousel -->
+        <div class="heading-carousel-container">
+          <div class="carousel-inner">
+            <span id="arrow-left"><i class="fas fa-arrow-left"></i></span>
+
+            <div class="carousel-wrapper">
+              <h4 class="carousel-item active-heading">Видеа</h4>
+              <h4 class="carousel-item inactive-heading">Статии</h4>
+              <h4 class="carousel-item inactive-heading">Упатства</h4>
+            </div>
+
+            <span id="arrow-right"><i class="fas fa-arrow-right"></i></span>
+          </div>
+
+          <div class="carousel-pagination">
+            <span class="dot"><i class="fas fa-circle"></i></span>
+            <span class="dot"><i class="fas fa-circle"></i></span>
+            <span class="dot"><i class="fas fa-circle"></i></span>
+          </div>
+        </div>
+
+        <!-- filter buttons -->
+        <div class="filter-btns-container"></div>
+
+        <!-- cards -->
+        <div class="card-container" id="card-container"></div>
+        <div class="see-more-btn-container">
+          <button id="see-more-btn">
+            <i class="fas fa-plus"></i>&nbsp; Види повеќе
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERLAY -->
+    <div id="overlay" class="hidden"></div>
+
+    <!-- INFORMATION MODAL -->
+    <section id="information-modal" class="hidden">
+      <div class="modal-close-btn"><i class="far fa-window-close"></i></div>
+
+      <!-- content container -->
+      <div class="content-container">
+        <div class="modal-content">
+          <h2>Лоши навики при “Live streaming”</h2>
+          <p>
+            Лорем ипсум е едноставен модел на текст кој се користел во
+            печатарската индустрија. Лорем ипсум бил индустриски стандард кој се
+            користел како модел уште пред 1500 години, кога непознат печатар зел
+            кутија со букви и ги сложил на таков начин за да направи примерок на
+            книга. И не само што овој модел опстанал пет векови туку почнал да
+            се користи и во електронските медиуми, кој се уште не е променет.
+          </p>
+          <p class="date-posted">Објавено на 28/05/23</p>
+
+          <!-- comment section -->
+          <div class="comment-section">
+            <div class="comment-container" id="leave-a-comment">
+              <input type="text" placeholder="Остави коментар..." />
+              <div class="info-box">
+                <div class="personal-info">
+                  <img alt="info-img" id="modalInputImg" />
+                  <p id="modalNameSurname"></p>
+                </div>
+              </div>
+            </div>
+            <div class="comment-container">
+              <p>
+                Лорем ипсум е едноставен модел на текст кој се користел во
+                печатарската индустрија. Лорем ипсум бил индустриски стандард
+                кој се користел како модел уште пред 1500 години, кога непознат
+                печатар зел кутија со букви и ги сложил на таков начин за да
+                направи примерок на книга.
+              </p>
+              <div class="info-box">
+                <div class="personal-info">
+                  <img
+                    src="./assets/profile_images/profile_img_2.png"
+                    alt="info-img"
+                  />
+                  <p>Име и Презиме</p>
+                </div>
+                <div class="date-info">
+                  <p>00/00/00, 00:00</p>
+                </div>
+              </div>
+            </div>
+            <div class="comment-container">
+              <p>
+                Лорем ипсум е едноставен модел на текст кој се користел во
+                печатарската индустрија. Лорем ипсум бил индустриски стандард
+                кој се користел.
+              </p>
+              <div class="info-box">
+                <div class="personal-info">
+                  <img
+                    src="./assets/profile_images/profile_img_3.png"
+                    alt="info-img"
+                  />
+                  <p>Име и Презиме</p>
+                </div>
+                <div class="date-info">
+                  <p>00/00/00, 00:00</p>
+                </div>
+              </div>
+            </div>
+            <div class="comment-container">
+              <p>
+                Лорем ипсум е едноставен модел на текст кој се користел во
+                печатарската индустрија. Лорем ипсум бил индустриски стандард
+                кој се користел како модел уште пред 1500 години кога непознат
+                печатар зел кутија со букви и ги сложил на таков начин за да
+                направи примерок на книга.
+              </p>
+              <div class="info-box">
+                <div class="personal-info">
+                  <img
+                    src="./assets/profile_images/profile_img_4.png"
+                    alt="info-img"
+                  />
+                  <p>Име и Презиме</p>
+                </div>
+                <div class="date-info">
+                  <p>00/00/00, 00:00</p>
+                </div>
+              </div>
+            </div>
+            <div class="comment-container">
+              <p>
+                Лорем ипсум е едноставен модел на текст кој се користел во
+                печатарската индустрија. Лорем ипсум бил индустриски стандард
+                кој се користел како модел уште пред 1500 години кога непознат
+                печатар зел кутија со букви и ги сложил на таков начин за да
+                направи примерок на книга.
+              </p>
+              <div class="info-box">
+                <div class="personal-info">
+                  <img
+                    src="./assets/profile_images/profile_img_5.png"
+                    alt="info-img"
+                  />
+                  <p>Име и Презиме</p>
+                </div>
+                <div class="date-info">
+                  <p>00/00/00, 00:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- img section -->
+        <div class="modal-img">
+          <div id="modal-video-picture">
+            <span class="play-btn"><i class="far fa-play-circle"></i></span>
+          </div>
+          <div id="modal-video-container" class="hidden">
+            <iframe
+              id="modal-video"
+              width="100%"
+              src="https://www.youtube.com/embed/u31qwQUeGuM?autoplay=1&enablejsapi=1&mute=1"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WELCOME MODAL -->
+    <section id="welcome-modal" class="hidden">
+      <div class="welcome-modal-content">
+        <h6>Добредојде!</h6>
+        <p>Успешно креиран профил</p>
+        <a href="#information"
+          ><button id="welcomeModalBtn">Продолжи кон Safeblink</button></a
+        >
+      </div>
+    </section>
+
+    <!-- DISCUSSION PAGE -->
+    <section id="discussion-page" class="hidden">
+      <div class="wrapper">
+        <h1>Табла за дискусии</h1>
+        <div class="cards-container">
+          <div class="card" id="shareExperienceCard">
+            <div class="input-box">
+              <input
+                type="text"
+                id="shareExperienceInput"
+                placeholder="Сподели искуство..."
+              />
+              <button id="submitNewDiscBtn">Испрати</button>
+            </div>
+            <div class="info-box">
+              <img alt="discussion-img" />
+              <p class="shareExperienceNameSurname"></p>
+            </div>
+          </div>
+
+          <!-- cards loaded dynamically -->
+          <div id="dynamicCardsContainer"></div>
+        </div>
+
+        <!-- overlay -->
+        <div class="gradient-overlay">
+          <button class="see-more">
+            <i class="fas fa-plus"></i> Види повеќе
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT PAGE -->
+    <section id="contact-page" class="hidden">
+      <div class="wrapper">
+        <h1>Контакт</h1>
+
+        <div class="cards-container">
+          <h2>Побарај стручна помош</h2>
+
+          <div class="card">
+            <div class="text-box">
+              <h3>Агенција за заштита на личните податоци</h3>
+              <p>
+                Лорем ипсум е едноставен модел на текст кој се користел во
+                печатарската индустрија. Лорем ипсум бил индустриски стандард
+                кој се користел како модел уште пред 1500 години, кога непознат
+                печатар зел кутија со букви и ги сложил на таков начин за да
+                направи примерок на книга.
+              </p>
+            </div>
+            <div class="button-box">
+              <button>Линк</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-container">
+          <h2>Невладини организации</h2>
+
+          <div class="card">
+            <div class="text-box">
+              <h3>NGO 1</h3>
+              <p>
+                Лорем ипсум е едноставен модел на текст кој се користел во
+                печатарската индустрија. Лорем ипсум бил индустриски стандард
+                кој се користел како модел уште пред 1500 години, кога непознат
+                печатар зел кутија со букви и ги сложил на таков начин за да
+                направи примерок на книга.
+              </p>
+            </div>
+            <div class="button-box">
+              <button>Линк</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="text-box">
+              <h3>NGO 2</h3>
+              <p>
+                Лорем ипсум е едноставен модел на текст кој се користел во
+                печатарската индустрија. Лорем ипсум бил индустриски стандард
+                кој се користел како модел уште пред 1500 години, кога непознат
+                печатар зел кутија со букви и ги сложил на таков начин за да
+                направи примерок на книга.
+              </p>
+            </div>
+            <div class="button-box">
+              <button>Линк</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="text-box">
+              <h3>NGO 3</h3>
+              <p>
+                Лорем ипсум е едноставен модел на текст кој се користел во
+                печатарската индустрија. Лорем ипсум бил индустриски стандард
+                кој се користел како модел уште пред 1500 години, кога непознат
+                печатар зел кутија со букви и ги сложил на таков начин за да
+                направи примерок на книга.
+              </p>
+            </div>
+            <div class="button-box">
+              <button>Линк</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFILE PAGE -->
+    <section id="profile-page" class="hidden">
+      <div class="wrapper">
+        <h1>Профил</h1>
+
+        <!-- profile info container -->
+        <div class="profile-info-container">
+          <div class="image-container">
+            <div class="image-box">
+              <img alt="profile-img" id="profile-page-img" />
+
+              <span class="change-photo">Промени</span>
+            </div>
+          </div>
+          <div class="info-container">
+            <form id="profile-form">
+              <div class="info-box">
+                <label for="profile-username"
+                  >Име и презиме / Корисничко име</label
+                >
+                <div class="input-box">
+                  <input id="profile-username" name="username" type="text" />
+                  <button>Промени</button>
+                  <div class="icons-container hidden">
+                    <span class="check-icon"><i class="fas fa-check"></i></span>
+                    <span class="x-icon"><i class="fas fa-times"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="info-box">
+                <label for="profile-birth-year">Година на раѓање</label>
+                <div class="input-box">
+                  <input
+                    id="profile-birth-year"
+                    name="birthYear"
+                    type="number"
+                    min="1900"
+                    max="2025"
+                    class="profile-input"
+                  />
+                  <button id="birth-year-btn">Промени</button>
+                  <div class="icons-container hidden">
+                    <span class="check-icon"><i class="fas fa-check"></i></span>
+                    <span class="x-icon"><i class="fas fa-times"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="info-box">
+                <label for="profile-email">Email адреса</label>
+                <div class="input-box">
+                  <input
+                    id="profile-email"
+                    name="email"
+                    type="email"
+                    class="profile-input"
+                  />
+                  <button id="profile-email-btn">Промени</button>
+                  <div class="icons-container hidden">
+                    <span class="check-icon"><i class="fas fa-check"></i></span>
+                    <span class="x-icon"><i class="fas fa-times"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="info-box">
+                <label for="profile-gender">Пол</label>
+                <div class="input-box">
+                  <input id="profile-gender" name="gender" type="text" />
+                  <button>Промени</button>
+                  <div class="icons-container hidden">
+                    <span class="check-icon"><i class="fas fa-check"></i></span>
+                    <span class="x-icon"><i class="fas fa-times"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="info-box">
+                <label for="profile-password">Лозинка</label>
+                <div class="input-box">
+                  <input
+                    id="profile-password"
+                    value="password"
+                    name="password"
+                    type="password"
+                  />
+                  <button>Промени</button>
+                  <div class="icons-container hidden">
+                    <span class="check-icon"><i class="fas fa-check"></i></span>
+                    <span class="x-icon"><i class="fas fa-times"></i></span>
+                  </div>
+                </div>
+              </div>
+              <button id="main-change-button">Промени</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- progress bar container -->
+        <div class="progress-container">
+          <div class="title-container">
+            <p>Следи го својот Safeblink напредок!</p>
+            <p>Моментално ниво: Лорем ипсум</p>
+          </div>
+          <div class="progress-bar-outer">
+            <div class="progress-bar-inner"></div>
+          </div>
+        </div>
+
+        <!-- cards container -->
+        <div class="cards-container">
+          <div class="card">
+            <div class="svg-wrapper">
+              <svg
+                width="55px"
+                height="73px"
+                viewBox="0 0 55 73"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="gradient1"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #ffffff; stop-opacity: 0.8"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #e2dfe3; stop-opacity: 0.1"
+                    />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M39.6825 33.9711C39.2431 33.6369 39.1576 33.0098 39.4916 32.5702L47.9766 21.4005C48.3107 20.9607 48.938 20.875 49.3778 21.2091L54.3986 25.0233C54.8383 25.3573 54.924 25.9845 54.5901 26.4243L46.1054 37.599C45.7712 38.0391 45.1434 38.1248 44.7036 37.7902L39.6825 33.9711ZM36.1063 31.2912C36.5462 31.625 37.1734 31.5391 37.5073 31.0993L46.6065 19.1141C46.9405 18.6742 46.8546 18.0468 46.4146 17.7128L41.0644 13.6526C40.6245 13.3188 39.9973 13.4047 39.6634 13.8446L30.5642 25.8297C30.2302 26.2697 30.3162 26.8971 30.7562 27.231L36.1063 31.2912ZM32.1159 16.5418C32.4179 16.6891 32.5433 17.0532 32.396 17.3552C32.0737 18.016 32.9822 18.5753 33.427 17.9899L37.8745 12.138C38.2087 11.6982 38.1231 11.0708 37.6834 10.7367L32.7169 6.96301C32.2771 6.62885 31.6497 6.71453 31.3156 7.15437L27.0655 12.7496C26.6842 13.2516 26.8568 13.9769 27.4235 14.2533L32.1159 16.5418ZM28.8579 6.30402C29.1919 5.86423 29.1061 5.23699 28.6664 4.90295L23.0626 0.646034C22.6228 0.31191 21.9953 0.39767 21.6613 0.837572L16.5222 7.60531C16.1409 8.10736 16.3137 8.83262 16.8803 9.10891L23.3287 12.2532C23.7577 12.4624 24.2748 12.3393 24.5634 11.9592L28.8579 6.30402ZM46.2803 41.4412C46.1096 41.6665 45.7895 41.7126 45.5622 41.5447L24.6356 26.0816C24.5644 26.029 24.4764 26.0044 24.3882 26.0125L23.6904 26.0765C23.505 26.0935 23.4639 26.3462 23.6345 26.421C23.6754 26.439 23.7082 26.4715 23.7265 26.5123L32.7413 46.5882C33.0149 47.1975 32.6258 47.8986 31.964 47.9887L31.4812 48.0545C31.0418 48.1143 30.6155 47.8777 30.4339 47.4731L21.9973 28.6781C21.8962 28.4529 21.7154 28.273 21.4897 28.1731L16.1831 25.8249C15.8636 25.6835 15.641 25.3856 15.5961 25.0391L15.2912 22.6891C15.1886 21.8975 16.009 21.3106 16.725 21.6634L20.8794 23.7106C21.0446 23.792 21.2292 23.8262 21.4126 23.8094L26.1818 23.3727C26.5298 23.3408 26.8359 23.1295 26.9892 22.8155L28.9266 18.8461C29.1689 18.3497 28.9628 17.7508 28.4663 17.5087L13.0128 9.97142C12.5745 9.75765 12.0459 9.89118 11.7618 10.2875L0.207077 26.4007C-0.0348765 26.7381 -0.0431667 27.19 0.186246 27.536L15.1887 50.1666C15.3266 50.3746 15.3817 50.6266 15.3433 50.8732L12.0804 71.8046C11.9859 72.411 12.4548 72.9586 13.0685 72.9586H39.6152C40.1674 72.9586 40.6152 72.5109 40.6152 71.9586V54.8169C40.6152 54.6069 40.6813 54.4023 40.8041 54.232L45.9402 47.1107C46.0194 47.0008 46.0755 46.876 46.1051 46.7438L47.1954 41.8655C47.3163 41.3243 46.6151 40.9992 46.2803 41.4412Z"
+                  fill="#83b3db"
+                  stroke="url(#gradient1)"
+                  stroke-width="3"
+                />
+              </svg>
+            </div>
+            <p>Се придружи!</p>
+          </div>
+          <div class="card">
+            <div class="svg-wrapper">
+              <svg
+                width="79px"
+                height="64px"
+                viewBox="0 0 79 64"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="gradient2"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #ffffff; stop-opacity: 0.8"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #e2dfe3; stop-opacity: 0.1"
+                    />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M13.7759 32.3113C14.5872 32.1926 15.3889 32.5811 15.7984 33.2915L22.4405 44.8156C22.8505 45.527 22.784 46.4169 22.2728 47.0595L14.8283 56.4165C13.9503 57.5201 12.2366 57.3928 11.5313 56.1716L0.474062 37.0268C-0.232687 35.8031 0.518027 34.2523 1.91624 34.0476L13.7759 32.3113ZM61 55.9946C59.8954 55.9946 59 55.0991 59 53.9946V46.4558C59 45.6647 59.4763 44.9629 60.153 44.553C63.0496 42.7987 65 39.6483 65 35.9946C65 34.5646 64.6853 33.1976 64.1251 31.9824C63.6089 30.8628 63.8465 29.4304 64.9112 28.8088L70.76 25.3946C74.8 23.0346 76.2 17.8746 73.84 13.8346L68.32 4.23456C67.1945 2.2946 65.3479 0.878072 63.1826 0.293658C61.0173 -0.290755 58.7087 0.00431275 56.76 1.11456L24.24 19.9946C20.44 22.1146 19.12 26.9946 21.32 30.8346L27.32 41.2346C29.52 45.0346 34.44 46.3546 38.24 44.1546L43.8029 40.9589C44.8434 40.3611 46.1637 40.8236 46.8648 41.7975C47.6598 42.9018 48.6734 43.8426 49.844 44.5525C50.5218 44.9635 51 45.6661 51 46.4588V55.9946C51 60.3946 54.6 63.9946 59 63.9946H77C78.1046 63.9946 79 63.0991 79 61.9946V57.9946C79 56.89 78.1046 55.9946 77 55.9946H61Z"
+                  fill="#83b3db"
+                  stroke="url(#gradient2)"
+                  stroke-width="3"
+                />
+              </svg>
+            </div>
+            <p>Изгледани 10 видеа</p>
+          </div>
+          <div class="card">
+            <div class="svg-wrapper">
+              <svg
+                width="80px"
+                height="80px"
+                viewBox="0 0 80 80"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="gradient3"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #ffffff; stop-opacity: 0.8"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #e2dfe3; stop-opacity: 0.1"
+                    />
+                  </linearGradient>
+                </defs>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0.461247 40.8697C0.159046 40.3175 0.159046 39.6825 0.461247 39.1303C3.15826 34.2018 17.5455 10 40 10C62.4545 10 76.8417 34.2018 79.5387 39.1303C79.841 39.6825 79.841 40.3175 79.5387 40.8697C76.8417 45.7982 62.4545 70 40 70C17.5455 70 3.15826 45.7982 0.461247 40.8697ZM9.05 40.65C8.80269 40.2531 8.81052 39.7455 9.06 39.35C10.69 36.8 13.09 33.415 16.16 30.07C22.47 23.175 30.6 17.5 40 17.5C49.39 17.5 57.53 23.175 63.85 30.07C66.3665 32.8382 68.6516 35.8073 70.6827 38.9474C71.097 39.588 71.0958 40.4113 70.6801 41.051C68.641 44.1879 66.3538 47.1571 63.84 49.93C57.53 56.825 49.4 62.5 40 62.5C30.61 62.5 22.47 56.825 16.15 49.93C13.5234 47.0445 11.1481 43.9399 9.05 40.65ZM55 40C54.9991 43.1576 54.0017 46.2344 52.1499 48.7921C50.2982 51.3498 47.6865 53.2578 44.687 54.2445C41.6874 55.2311 38.4531 55.246 35.4446 54.2871C32.4361 53.3281 29.8069 51.4442 27.9317 48.9037C26.0564 46.3632 25.0307 43.2957 25.0007 40.1383C24.9706 36.9808 25.9378 33.8943 27.7644 31.3186C29.5909 28.7429 32.1837 26.8093 35.1735 25.7933C37.0122 25.1684 38.9433 24.9102 40.8598 25.0202C42.12 25.0925 42.3731 26.8817 41.5961 27.8766C40.8495 28.8325 40.3459 29.9553 40.1285 31.1486C39.9111 32.3419 39.9863 33.5701 40.3478 34.7279C40.7092 35.8857 41.3461 36.9386 42.2037 37.7963C43.0614 38.6539 44.1143 39.2908 45.2721 39.6522C46.4299 40.0137 47.6582 40.0889 48.8514 39.8715C50.0447 39.6541 51.1675 39.1505 52.1234 38.4039C53.1173 37.6277 54.9052 37.8818 54.9762 39.1408C54.9923 39.4267 55.0003 39.7132 55 40Z"
+                  fill="#83b3db"
+                  stroke="url(#gradient3)"
+                  stroke-width="3"
+                />
+              </svg>
+            </div>
+            <p>Изгледани 20 видеа</p>
+          </div>
+          <div class="card">
+            <div class="svg-wrapper">
+              <svg
+                width="80px"
+                height="80px"
+                viewBox="0 0 80 80"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="gradient4"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #ffffff; stop-opacity: 0.8"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #e2dfe3; stop-opacity: 0.1"
+                    />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M76 44C75.7368 48.7914 74.328 53.4497 71.892 57.584C69.456 61.7183 66.0637 65.208 62 67.76L40.9724 79.459C40.3678 79.7954 39.6322 79.7954 39.0276 79.459L18 67.76C13.9363 65.208 10.544 61.7183 8.108 57.584C5.67196 53.4497 4.26322 48.7914 4 44V14C4 12.8954 4.89639 12.0034 6.00037 11.9672C18.2112 11.5666 29.501 7.51241 38.7835 0.891027C39.5103 0.372637 40.4888 0.373942 41.2143 0.893954C50.4973 7.54698 61.7879 11.5702 73.9996 11.9675C75.1036 12.0034 76 12.8954 76 14V44ZM40 48.3514C40 48.3382 40.0149 48.3304 40.0257 48.338L46.9525 53.1772C48.5081 54.264 50.5612 52.776 50.0125 50.9594L47.9625 44.1726C47.7206 43.3717 48.0028 42.5048 48.6699 41.9997L54.3428 37.7051C55.8536 36.5614 55.075 34.1536 53.1806 34.111L46.0675 33.9512C45.2331 33.9324 44.4981 33.3975 44.2236 32.6094L41.8888 25.9042C41.2656 24.1144 38.7344 24.1144 38.1112 25.9041L35.7764 32.6094C35.5019 33.3975 34.7669 33.9324 33.9325 33.9512L26.8245 34.1109C24.9295 34.1535 24.1513 36.5625 25.6631 37.7057L31.288 41.9591C31.9562 42.4644 32.2387 43.3325 31.9958 44.1342L29.9314 50.9488C29.3834 52.7576 31.4184 54.247 32.9769 53.1779L39.9929 48.3649C39.9973 48.3618 40 48.3568 40 48.3514Z"
+                  fill="#83b3db"
+                  stroke="url(#gradient4)"
+                  stroke-width="3"
+                />
+              </svg>
+            </div>
+            <p>Изгледани 50 видеа</p>
+          </div>
+          <div class="card">
+            <div class="svg-wrapper">
+              <svg
+                width="68px"
+                height="67px"
+                viewBox="0 0 68 67"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="gradient5"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #ffffff; stop-opacity: 0.8"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #e2dfe3; stop-opacity: 0.1"
+                    />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M57.5001 66.0002L49.1643 57.7356C48.3823 56.9603 47.1206 56.963 46.3419 57.7417L41.831 62.2526C41.0499 63.0337 39.7836 63.0337 39.0025 62.2526L38.0834 61.3335C36.8056 60.0557 36.1667 58.4724 36.1667 56.5835C36.1667 54.6946 36.8056 53.1113 38.0834 51.8335L52.1667 37.7502C53.4445 36.4724 55.0279 35.8335 56.9167 35.8335C58.8056 35.8335 60.389 36.4724 61.6667 37.7502L62.5859 38.6693C63.3669 39.4503 63.3669 40.7167 62.5859 41.4977L58.0749 46.0087C57.2962 46.7874 57.2935 48.049 58.0688 48.831L66.3334 57.1668C67.0001 57.8335 67.3334 58.6113 67.3334 59.5002C67.3334 60.389 67.0001 61.1668 66.3334 61.8335L62.1667 66.0002C61.5001 66.6668 60.7223 67.0002 59.8334 67.0002C58.9445 67.0002 58.1667 66.6668 57.5001 66.0002ZM67.3334 12.8384C67.3334 13.3688 67.1227 13.8775 66.7476 14.2526L29.8774 51.1229C29.6761 51.3241 29.6945 51.6557 29.9167 51.8335C31.1945 53.1113 31.8334 54.6946 31.8334 56.5835C31.8334 58.4724 31.1945 60.0557 29.9167 61.3335L28.9976 62.2526C28.2166 63.0337 26.9502 63.0337 26.1692 62.2526L21.6582 57.7417C20.8796 56.963 19.6179 56.9603 18.8359 57.7356L10.5001 66.0002C9.83341 66.6668 9.05564 67.0002 8.16675 67.0002C7.27786 67.0002 6.50008 66.6668 5.83341 66.0002L1.66675 61.8335C1.00008 61.1668 0.666748 60.389 0.666748 59.5002C0.666748 58.6113 1.00008 57.8335 1.66675 57.1668L9.93132 48.831C10.7066 48.049 10.7039 46.7873 9.92526 46.0087L5.41429 41.4977C4.63324 40.7167 4.63325 39.4503 5.4143 38.6693L6.33341 37.7502C7.61119 36.4724 9.19453 35.8335 11.0834 35.8335C12.9723 35.8335 14.5556 36.4724 15.8334 37.7502C16.0112 37.9724 16.3428 37.9908 16.5441 37.7895L53.4143 0.919282C53.7894 0.544209 54.2981 0.333496 54.8285 0.333496H65.3334C66.438 0.333496 67.3334 1.22893 67.3334 2.3335V12.8384ZM18.581 28.7526C17.7999 29.5337 16.5336 29.5337 15.7525 28.7526L1.25253 14.2526C0.877461 13.8775 0.666748 13.3688 0.666748 12.8384V2.33349C0.666748 1.22892 1.56218 0.333496 2.66675 0.333496H13.1717C13.7021 0.333496 14.2108 0.54421 14.5859 0.919283L29.0859 15.4193C29.8669 16.2003 29.8669 17.4667 29.0859 18.2477L18.581 28.7526Z"
+                  fill="#83b3db"
+                  stroke="url(#gradient5)"
+                  stroke-width="3"
+                />
+              </svg>
+            </div>
+            <p>Активност во дискусија</p>
+          </div>
+          <div class="card">
+            <div class="svg-wrapper">
+              <svg
+                width="80px"
+                height="80px"
+                viewBox="0 0 80 80"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="gradient6"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #ffffff; stop-opacity: 0.8"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #e2dfe3; stop-opacity: 0.1"
+                    />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M66 10.248C64.8954 10.248 64 9.35257 64 8.248V4C64 2.89543 63.1046 2 62 2H18C16.8954 2 16 2.89543 16 4V8.248C16 9.35257 15.1046 10.248 14 10.248H2C0.895431 10.248 0 11.1434 0 12.248V22C0 31.675 6.93341 39.6909 16.0783 41.5228C16.8202 41.6714 17.4435 42.1829 17.7242 42.8855C19.1704 46.5053 21.4795 49.7245 24.4579 52.2584C27.3202 54.6934 30.7083 56.4169 34.345 57.2995C35.2933 57.5297 36 58.3542 36 59.3299V62C36 64.1217 35.1571 66.1566 33.6569 67.6569C32.1566 69.1571 30.1217 70 28 70H26C24.8954 70 24 70.8954 24 72V76C24 77.1046 24.8954 78 26 78H54C55.1046 78 56 77.1046 56 76V72C56 70.8954 55.1046 70 54 70H52C49.8783 70 47.8434 69.1571 46.3431 67.6569C44.8429 66.1566 44 64.1217 44 62V59.3299C44 58.3542 44.7067 57.5297 45.655 57.2995C49.2917 56.4169 52.6798 54.6934 55.5421 52.2584C58.5205 49.7245 60.8296 46.5053 62.2758 42.8855C62.5565 42.1829 63.1798 41.6714 63.9217 41.5228C73.0666 39.6909 80 31.675 80 22V12.248C80 11.1434 79.1046 10.248 78 10.248H66ZM8 22V20.248C8 19.1434 8.89543 18.248 10 18.248H14C15.1046 18.248 16 19.1434 16 20.248V30.4807C16 31.8619 14.6251 32.8143 13.4671 32.0615C12.1981 31.2366 11.0892 30.1747 10.2055 28.9251C8.77309 26.8997 8.00269 24.4807 8 22ZM72 22C71.997 24.4811 71.2265 26.9005 69.7942 28.9265C68.9108 30.1761 67.8022 31.2383 66.5336 32.0638C65.3756 32.8172 64 31.8649 64 30.4833V20.248C64 19.1434 64.8954 18.248 66 18.248H70C71.1046 18.248 72 19.1434 72 20.248V22Z"
+                  fill="#83b3db"
+                  stroke="url(#gradient6)"
+                  stroke-width="3"
+                />
+              </svg>
+            </div>
+            <p>Прочитани 20 статии</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGIN PAGE -->
+    <section id="login-page" class="hidden">
+      <div class="wrapper">
+        <h1>Придружи ни се</h1>
+        <div class="content-container">
+          <!-- login container -->
+          <div class="login-container">
+            <div class="socials-login-cards">
+              <a href="https://www.google.com/">
+                <div class="social-card">
+                  <i class="fab fa-google"></i>
+                  <span>Продолжи со Google</span>
+                </div>
+              </a>
+              <a href="https://www.apple.com/">
+                <div class="social-card">
+                  <i class="fab fa-apple"></i>
+                  <span>Продолжи со Apple</span>
+                </div>
+              </a>
+              <a href="https://www.tiktok.com/en/">
+                <div class="social-card">
+                  <i class="fab fa-tiktok"></i>
+                  <span>Продолжи со TikTok</span>
+                </div>
+              </a>
+            </div>
+            <div class="separator-container">
+              <div class="separator"></div>
+              <p class="separator-text">или</p>
+              <div class="separator"></div>
+            </div>
+            <div class="login-container">
+              <form id="login-form">
+                <div class="username-container">
+                  <label for="username">Корисничко име*</label>
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Username"
+                  />
+                  <span id="usernameErrorMessage"></span>
+                </div>
+                <div class="password-container">
+                  <label for="password">Лозинка*</label>
+                  <div class="password-input-container">
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      placeholder="Password"
+                    />
+                    <span id="eye-hide-icon"
+                      ><i class="fas fa-eye-slash"></i
+                    ></span>
+                    <span id="eye-show-icon" class="hidden"
+                      ><i class="fas fa-eye"></i
+                    ></span>
+                  </div>
+                  <span id="passwordErrorMessage"></span>
+                </div>
+                <div class="extra-container">
+                  <div class="remember-me">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" />
+                      <span></span> Запомни ме
+                    </label>
+                  </div>
+                  <div class="forget-password">
+                    <p class="forgetted-pass">Ја заборави лозинката?</p>
+                  </div>
+                </div>
+                <button type="submit" id="loginBtnForm" class="disabled">
+                  Најави се
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- image container -->
+          <div class="image-container">
+            <img src="./assets/images/encryption_man_img.png" alt="login-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 404 PAGE -->
+    <section id="404-page" class="hidden">
+      <div class="animation-container">
+        <dotlottie-player
+          src="https://lottie.host/67eabae7-ab9c-401a-b008-559ea5f6499f/YxG3PkfzOi.lottie"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+          class="lottie-animation"
+        ></dotlottie-player>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="wrapper">
+        <div class="footer-container">
+          <div class="contact-part">
+            <div class="logo-container">
+              <a href="#home">
+                <img src="./assets/images/logo_white.png" alt="footer-logo" />
+              </a>
+              <img
+                src="./assets/svg_icons/mk-al-white_icon.svg"
+                alt="language-icon"
+                id="language-icon-logo"
+              />
+            </div>
+            <p>International Foundation for Electoral Systems (IFES)</p>
+            <div class="contact-info">
+              <div class="phone-info">
+                <i class="fas fa-phone"></i>&nbsp;
+                <a href="tel:+38923122288">+389-2-312-2288</a>
+              </div>
+              <div class="email-info">
+                <i class="fas fa-envelope"></i>&nbsp;
+                <a href="mailto:ifes.nmk@ifes.org">ifes.nmk@ifes.org</a>
+              </div>
+            </div>
+          </div>
+          <div class="menu-part">
+            <ul>
+              <li><a href="#information">Информирај Се</a></li>
+              <li><a href="#disscussion">Дискусии</a></li>
+              <li><a href="#contact">Контакт - корисни линкови</a></li>
+              <li><a href="#login">Најави Се</a></li>
+            </ul>
+          </div>
+          <div class="links-part">
+            <img
+              src="./assets/svg_icons/mk-al-white_icon.svg"
+              alt="language-icon"
+              id="language-icon-links"
+            />
+            <div class="socials-container">
+              <a href="https://www.instagram.com/">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+              <a href="https://www.facebook.com/">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="https://www.tiktok.com/en/">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+            <p class="copyright">
+              &copy; All Rights Reserved. | <a href="#home">safeblink.mk</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- LOTTIE SCRIPT -->
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+
+    <!-- SCRIPT -->
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>

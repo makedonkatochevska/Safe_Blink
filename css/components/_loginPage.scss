@@ -1,0 +1,215 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "sass:math";
+
+#login-page {
+  background: var.$gradient-primary;
+
+  .wrapper {
+    @extend %container-big;
+    @extend %wrapper-80;
+  }
+
+  // CONTENT CONTAINER
+  .content-container {
+    @include mix.flex(row, space-between, flex-start);
+
+    //breakpoint
+    @include breakpoint.tablet {
+      flex-direction: column;
+    }
+
+    // LOGIN CONTAINER
+    .login-container {
+      flex-basis: 30%;
+
+      //breakpoint
+      @include breakpoint.laptop-between {
+        flex-basis: 40%;
+      }
+
+      //breakpoint
+      @include breakpoint.tablet {
+        flex-basis: 100%;
+        width: 100%;
+      }
+    }
+
+    // SOCIAL LOGIN CARDS
+    .socials-login-cards {
+      @include mix.flex(column, center, stretch, var.$gutter-half);
+
+      .social-card {
+        @include mix.button(
+          var.$background-color-base,
+          var.$text-color-primary,
+          var.$gutter-15
+        );
+        width: 100%;
+        border-radius: 3px;
+        border: 2px solid var.$background-color-primary;
+
+        i {
+          font-size: var.$font-size-big;
+        }
+
+        span {
+          margin-left: var.$gutter-half;
+          font-weight: var.$font-weight-normal;
+        }
+      }
+    }
+
+    // SEPARATOR CONTAINER
+    .separator-container {
+      @include mix.flex(row, space-between, center, var.$gutter-half);
+      @extend %container-small;
+
+      .separator {
+        border-bottom: 1px solid var.$background-color-secondary;
+        width: 100%;
+      }
+
+      .separator-text {
+        margin-bottom: 0;
+        color: var.$text-color-light;
+      }
+    }
+
+    // LOGIN FORM
+    #login-form {
+      @include mix.flex(column, center, flex-start, var.$gutter-half);
+
+      label {
+        color: var.$text-color-light;
+        margin-bottom: var.$gutter-15;
+      }
+
+      input {
+        background-color: var.$background-color-base;
+        width: 100%;
+        padding: var.$gutter-half;
+        font-size: var.$font-size-base;
+        border-radius: 3px;
+        border: 2px solid var.$background-color-primary;
+      }
+    }
+
+    .username-container {
+      @include mix.flex(column, center, flex-start);
+      width: 100%;
+    }
+
+    .password-container {
+      @include mix.flex(column, center, flex-start);
+      width: 100%;
+
+      .password-input-container {
+        width: 100%;
+        position: relative;
+
+        span {
+          @include mix.flex(row, center, center);
+          position: absolute;
+          right: var.$gutter-15;
+          top: 0;
+          bottom: 0;
+          cursor: pointer;
+        }
+
+        i {
+          font-size: var.$font-size-medium;
+          color: rgba(var.$text-color-primary, 0.6);
+        }
+      }
+    }
+
+    // EXTRA CONTAINER
+    .extra-container {
+      @include mix.flex(row, space-between, center);
+      width: 100%;
+
+      .remember-me {
+        @include mix.flex(row, flex-start, center);
+        flex-basis: 50%;
+
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        .custom-checkbox span {
+          width: var.$gutter-15;
+          height: var.$gutter-15;
+          border: 1px solid var.$text-color-light;
+          background-color: transparent;
+          display: inline-block;
+          position: relative;
+          margin-right: var.$gutter-small;
+        }
+
+        .custom-checkbox input[type="checkbox"]:checked + span::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+          width: 4px;
+          height: 7px;
+          border: solid var.$text-color-light;
+          border-width: 0 2px 2px 0;
+        }
+      }
+
+      .forget-password {
+        flex-basis: 50%;
+        text-align: end;
+        color: var.$text-color-light;
+        cursor: pointer;
+
+        //breakpoint
+        @include breakpoint.mobile-l {
+          flex-basis: 70%;
+        }
+      }
+    }
+
+    // LOGIN BUTTON
+    #loginBtnForm {
+      @include mix.button(
+        rgba(var.$background-color-base, 0.9),
+        var.$text-color-primary,
+        var.$gutter-small
+      );
+      width: 50%;
+      margin: 0 auto;
+      position: relative;
+
+      &::after {
+        @include mix.border-style(
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 29.17%
+          )
+        );
+      }
+    }
+
+    // ERROR MESSAGES
+    #usernameErrorMessage,
+    #passwordErrorMessage {
+      color: #920000;
+    }
+
+    // IMAGE CONTAINER
+    .image-container {
+      flex-basis: 50%;
+
+      //breakpoint
+      @include breakpoint.tablet {
+        display: none;
+      }
+    }
+  }
+}

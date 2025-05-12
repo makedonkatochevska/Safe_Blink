@@ -1,0 +1,156 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "sass:math";
+
+#information-modal {
+  background-color: rgba(var.$background-color-base, 0.8);
+  position: fixed;
+  top: 1rem;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: calc(100vh - 2rem);
+  z-index: 1000;
+  border-radius: var.$border-radius-24;
+  overflow: hidden;
+  padding: var.$gutter-base;
+
+  // MODAL CLOSE BUTTON
+  .modal-close-btn {
+    text-align: end;
+    i {
+      font-size: var.$font-size-big;
+      cursor: pointer;
+    }
+  }
+
+  // CONTENT CONTAINER
+  .content-container {
+    @include mix.flex(row, flex-start, stretch, var.$gutter-base);
+    height: 100%;
+    padding-top: var.$gutter-15;
+    overflow: hidden;
+
+    //breakpoint
+    @include breakpoint.tablet {
+      justify-content: flex-start;
+      flex-direction: column;
+      overflow: auto;
+    }
+
+    // MODAL CONTENT
+    .modal-content {
+      flex-basis: 60%;
+
+      h2 {
+        margin-bottom: var.$gutter-15;
+      }
+
+      p {
+        line-height: var.$line-height-tiny;
+      }
+
+      .date-posted {
+        color: rgba(var.$text-color-primary, 0.5);
+        margin-bottom: var.$gutter-base;
+      }
+    }
+
+    // MODAL IMAGE
+    .modal-img {
+      flex-basis: 40%;
+
+      #modal-video-picture {
+        @include mix.flex(row, center, center);
+        background-image: url("../assets/inform_images/module-img.jpg");
+        background-position: calc(100% - 30%) center;
+        background-size: cover;
+        height: 100%;
+      }
+
+      .play-btn {
+        font-size: 10rem;
+        color: var.$text-color-light;
+        cursor: pointer;
+      }
+
+      #modal-video-container {
+        height: calc(100vh - 130px);
+        overflow: hidden;
+      }
+
+      #modal-video {
+        height: 100%;
+        overflow: hidden;
+      }
+    }
+  }
+
+  // COMMENT SECTION
+  .comment-section {
+    @include mix.flex(column, center, stretch, var.$gutter-medium);
+
+    .comment-container {
+      padding: var.$gutter-18;
+      border: 2px solid rgba(var.$text-color-primary, 0.5);
+      border-radius: var.$border-radius-medium;
+
+      input {
+        width: 100%;
+        padding: var.$gutter-small var.$gutter-small var.$gutter-small 0;
+        font-size: 24px;
+        margin-bottom: var.$gutter-15;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid var.$text-color-primary;
+        color: rgba(var.$text-color-primary, 0.5);
+      }
+
+      #modalNameSurname {
+        color: rgba(var.$text-color-primary, 0.5) !important;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid black;
+        object-fit: cover;
+      }
+
+      .info-box {
+        @include mix.flex(row, space-between, center);
+
+        //breakpoint
+        @include breakpoint.tablet {
+          flex-direction: column;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+
+        .date-info {
+          color: rgba(var.$text-color-primary, 0.5) !important;
+        }
+      }
+
+      .personal-info {
+        @include mix.flex(row, flex-start, center, var.$gutter-medium);
+      }
+    }
+  }
+}
+
+// OVERLAY STYLE
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}

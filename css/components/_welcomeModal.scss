@@ -1,0 +1,80 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "sass:math";
+
+#welcome-modal {
+  @include mix.flex(row, center, center);
+  background: var.$gradient-secondary;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 40vh;
+  z-index: 1000;
+  border-radius: var.$border-radius-big;
+  overflow: hidden;
+  padding: var.$gutter-base;
+
+  //breakpoint
+  @include breakpoint.laptop-between {
+    height: 60vh;
+  }
+
+  //breakpoint
+  @include breakpoint.laptop-l {
+    width: 60vw;
+  }
+
+  //breakpoint
+  @include breakpoint.tablet {
+    width: 80vw;
+  }
+
+  //breakpoint
+  @include breakpoint.mobile-s {
+    width: 90vw;
+  }
+
+  // WELCOME MODAL CONTENT
+  .welcome-modal-content {
+    @include mix.flex(column, center, center, var.$gutter-base);
+
+    //breakpoint
+    @include breakpoint.tablet {
+      gap: var.$gutter-half;
+    }
+
+    p {
+      font-size: var.$font-size-enormous;
+      color: var.$text-color-light;
+      text-align: center;
+
+      //breakpoint
+      @include breakpoint.tablet {
+        font-size: var.$font-size-big;
+      }
+
+      //breakpoint
+      @include breakpoint.mobile-l {
+        font-size: var.$font-size-medium;
+      }
+    }
+
+    button {
+      @include mix.button(
+        rgba(var.$background-color-base, 0.6),
+        var.$text-color-primary,
+        var.$gutter-15,
+        var.$gutter-56
+      );
+      font-size: var.$font-size-big;
+
+      //breakpoint
+      @include breakpoint.mobile-s {
+        padding-inline: var.$gutter-base;
+      }
+    }
+  }
+}

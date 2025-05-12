@@ -1,0 +1,153 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "sass:math";
+
+header {
+  background: var.$gradient-radial, var.$gradient-primary;
+  padding-block: var.$gutter-half;
+  border-bottom: 1px solid rgba(var.$text-color-light, 0.4);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 800;
+
+  .wrapper {
+    @extend %wrapper-90;
+    @include mix.flex(row, space-between, center, 0);
+  }
+
+  // LOGO AND NAV
+  .logoAndNav {
+    @include mix.flex(row, start, center, var.$gutter-big);
+    flex-basis: 60%;
+
+    //breakpoint
+    @include breakpoint.tablet {
+      justify-content: space-between;
+      flex-basis: 100%;
+    }
+
+    //breakpoint
+    @include breakpoint.laptop-m {
+      gap: var.$gutter-medium;
+    }
+
+    img {
+      display: block;
+    }
+
+    ul {
+      @include mix.flex(row, space-between, center, var.$gutter-medium, wrap);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      //breakpoint
+      @include breakpoint.tablet {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var.$gradient-primary;
+        padding: var.$gutter-medium 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      li {
+        font-weight: var.$font-weight-bold;
+        font-size: var.$font-size-big;
+        transition: color 0.3s ease-in-out;
+
+        //breakpoint
+        @include breakpoint.tablet {
+          width: 100%;
+          text-align: center;
+          padding: var.$gutter-small;
+        }
+
+        //breakpoint
+        @include breakpoint.laptop-m {
+          font-size: var.$font-size-base;
+        }
+
+        &:hover {
+          color: var.$text-color-light;
+        }
+      }
+
+      //breakpoint
+      @include breakpoint.tablet {
+        display: none;
+      }
+    }
+
+    // HAMBURGER ICON
+    .hamburger-icon {
+      display: none;
+      font-size: 35px;
+
+      //breakpoint
+      @include breakpoint.tablet {
+        display: block;
+      }
+    }
+  }
+
+  // HEADER BUTTONS
+  .headerBtn {
+    @include mix.flex(row, center, center, var.$gutter-small);
+    background-color: transparent;
+    color: var.$text-color-secondary;
+    border: 2px solid var.$text-color-secondary;
+    border-radius: var.$border-radius-base;
+    padding: math.div(var.$gutter-small, 2) var.$gutter-small;
+    font-size: var.$font-size-medium;
+    cursor: pointer;
+
+    //breakpoint
+    @include breakpoint.tablet {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 18px;
+    }
+  }
+
+  // MOBILE LOG BUTTONS
+  #mobileLogButtons {
+    display: none;
+
+    //breakpoint
+    @include breakpoint.tablet {
+      display: block;
+    }
+  }
+
+  // ACTIONS CONTAINER
+  .actions {
+    @include mix.flex(row, end, center, var.$gutter-medium, wrap);
+    flex-basis: 40%;
+
+    //breakpoint
+    @include breakpoint.tablet {
+      display: none;
+    }
+
+    .languages-icon {
+      width: 70px;
+    }
+
+    .profile-img-header {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var.$text-color-secondary;
+    }
+  }
+}
