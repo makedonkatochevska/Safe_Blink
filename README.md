@@ -146,7 +146,7 @@ The REST API is already included in the repository under the `/REST API` folder.
 
 1. Clone the repository:
    ```bash
-   git clone https://git.brainster.co/Makedonka.Tochevska-FE21/project2_makedonkatochevska_fe21.git .
+   git clone https://github.com/makedonkatochevska/Safe_Blink.git .
    ```
 2. Set up the Flask REST API:
    Make sure you have **Python 3.12.3** or later installed on your system. You can download it from the official [Python website](https://www.python.org/downloads/).
