@@ -126,10 +126,6 @@ Check out the pictures below for a quick preview of the core features:
 <br>
 <a href="https://i.imghippo.com/files/OaP5205mac.png" target="_blank">404 Page</a>
 
-OR check out the live demo:
-
-## <a href="https://safe-blink-makedonkatochevska.netlify.app/" target="_blank">LIVE DEMO</a>
-
 ## File Structure 📂
 
 - **assets/**: Contains all images and icons used in the application.
