@@ -1,1 +1,1 @@
-web: gunicorn authenticator:app
+web: python authenticator.py
